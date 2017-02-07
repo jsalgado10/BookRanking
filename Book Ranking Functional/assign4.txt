@@ -1,0 +1,39 @@
+Assign 4 Due 11:59PM November 18
+
+Reimplement the problem we looked at in assignment 3, but this time with a purely functional programming language (a language that does not permit any mutability). Implement two solutions, one that is sequential and one that runs the code concurrent/parallel.
+
+Once you complete the coding answer the following questions:
+
+1. In what way, structurally, the code is different from the solution in assignment 3?
+
+When sending an http request on Ruby we are required to use an agent on the http header request. Elixir does not require this and the number of lines needed to accomplish the request are less.
+
+Structurally, the amount of lines of code for the sequential and concurrent functions is less in Elixir compared to Ruby.
+
+In Ruby, to run concurrent functions you can use threads or the fork function while elixir offers spawn, or Tasks. When using Ruby Threads a mutex is required to lock access to the mutable list being used to store the results. Since Elixir does not have any mutable objects a lock is not needed.
+
+Applying multiple functions to an object in Elixir can be done using |> instead of returning the result to an object and then apply the next function on that object, or wrap the result around multiple functions.
+
+
+2. In what way, behavior wise, the code is different from the solution in assignment 3?
+
+Since all objects are immutable in Elixir, there is no need to place any locks when running concurrent functions.
+
+Ruby does not require a module/class to use a struct, and allows multiple structs. On the other hand, Elixir requires the struct to be inside the module, and prevents multiple structs being in the same module.
+
+Using external iterators, such as map and each, requires a different syntax. In ruby we can easily called the iterator map using a . after the collection object name. In elixir we need to use the Enum keyword and pass in the correct parameters. The outcome will be the same, but the syntax is different.
+
+
+3. What are some of your observations and things you learned from designing and implementing assignment 3 and assignment 4?
+
+We learned how to run functions concurrently in a hybrid language such as Ruby and a fully functional language such as Elixir. We learned that using a fully functional language is much safer since all objects are immutable and there is no side effects.
+
+Furthermore, because these objects are immutable, they are not subject to race conditions, and therefore, don't have to be protected by locks.
+
+Total [100]: 100
+                     
+Program works and displays result in the desired format [20]:
+Sequential solution: [30]:
+Concurrent solution: [30]:
+Code quality, solution relevant to language, etc. [10]:
+Answers to questions in assign4.txt [10]:
